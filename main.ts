@@ -38,10 +38,9 @@ const frameworks: Record<string, {
   "water": { name: "Water.css", htmlUrl: "/water.html", cssUrl: new URL("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css") }
 }
 
-const render = (framework) => {
-  console.log(frameworks, framework)
+const render = (currentFramework) => {
   return template`
-  <link rel="stylesheet" href="${frameworks[framework].cssUrl.toString()}">
+  <link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
   <h1>Hello World</h1>
   <ul>
     ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a></ol>`)}
