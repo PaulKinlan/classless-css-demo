@@ -37,17 +37,17 @@ const render = (currentFramework) => {
 
   <h1>Welcome</h1>
   <p>This site has be built to make it easier to see what how class-less CSS frameworks work and let you quickly compare them side-by-side</p>
-  <p>I built this because I had trouble doing this.</p>
-  <p>Here is the list of class-less CSS frameworks that you can checkout</p>
+  <p>I built this because I had trouble doing this and I wanted to make it easier for anyone else.</p>
+  <p>Here is the list of class-less CSS frameworks that you can checkout:</p>
 
   <ul>
-    ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a> - <a href="${framework.siteUrl}">homepage</a></ol>`)}
+    ${Object.values(frameworks).map(framework => template`<li><a href="${framework.htmlUrl}">${framework.name}</a> - <a href="${framework.siteUrl}">homepage</a></li>`)}
   </ul>
 
   <hr>
 
   <p>This page is rendered using ${frameworks[currentFramework].name}.</p>
-  <p>Some of the entries are taken from the layout from <a href="https://vasanthv.com/stylize.css/demo.html">stylize</a></p>
+  <p>Some of the entries are taken from the layout from <a href="https://vasanthv.com/stylize.css/demo.html">stylize</a>.</p>
 
   <section>
 			<h2>Typography:</h2>
