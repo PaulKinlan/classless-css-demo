@@ -3,6 +3,7 @@ const frameworks: Record<string, {
 }> = {
   "": { name: "Browser default style", htmlUrl: "/", cssUrl: `/styles/index.css`, siteUrl: "https://meiert.com/en/blog/user-agent-style-sheets/" }, // This is a hack to use my default style
   "attri": { name: "AttriCSS", htmlUrl: "/attri.html", cssUrl: "/styles/attri.css", siteUrl: "https://raj457036.github.io/attriCSS/" },
+  "holiday": {name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/"},
   "mvp": { name: "MVP.css", htmlUrl: "/mvp.html", cssUrl: "https://unpkg.com/mvp.css", siteUrl: "https://andybrewer.github.io/mvp/" },
   "tufte": { name: "Tufte.css", htmlUrl: "/tufte.html", cssUrl: "/styles/tufte.css", siteUrl: "https://github.com/edwardtufte/tufte-css" },
   "sakura": { name: "Sakura", htmlUrl: "/sakura.html", cssUrl: "/styles/sakura.css", siteUrl: "https://github.com/oxalorg/sakura" },
