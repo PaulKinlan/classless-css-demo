@@ -35,7 +35,6 @@ const frameworks: Record<string, {
   name: string, url: URL
 }> = {
   "": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
-  "index": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
   "water": { name: "Water.css", url: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" }
 }
 
