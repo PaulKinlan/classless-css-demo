@@ -49,9 +49,11 @@ const render = (currentFramework) => {
 	  I knew there were stylesheets that just used 'semantic html' (like Tufte) and didn't require any special class names
 	  (i.e <code>&ltbutton class="btn-primary"&gt;a button&lt;/button&gt;</code>), however I was struggling to find them.
 	</p>
+
+	<p>So I asked <a href="https://twitter.com/Paul_Kinlan/status/1560769014787411969">Twitter</a>:</p>
 	<blockquote>I should know this, but I'm looking for a simple CSS stylesheet that would replace the default user agent
 	  and make it look half decent. Google-fu is failing me, all I can find is resets and full frameworks. :\\
-	</blockquote> &mdash; <a href="https://twitter.com/Paul_Kinlan/status/1560769014787411969">Twitter</a>:
+	</blockquote> 
   
 	<p>Once I found examples of 'class-less CSS', it was then a bit of a pain to find them and compare all the different
 	  examples. Hence this page.</p>
