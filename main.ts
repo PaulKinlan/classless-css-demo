@@ -32,27 +32,25 @@ class StaticFileHandler {
 }
 
 const frameworks: Record<string, {
-  name: string, url: URL
+  name: string, htmlUrl: string, cssUrl: URL
 }> = {
-  "": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
-  "water": { name: "Water.css", url: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" }
+  "": { name: "Browser", htmllUrl: "/", cssUrl: "/styles/index.css" }, // This is a hack to use my default style
+  "water": { name: "Water.css", htmlUrl: "/water.html", cssUrl: new URL("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css") }
 }
 
 const render = (framework) => {
   return template`
-          <link rel="stylesheet" href="${frameworks[framework].toString()}">
-          <h1>Hello World</h1>
-          <ul>
-            ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.url}">${framework.name}</a></ol>`)}
-          </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
+  <link rel="stylesheet" href="${frameworks[framework].cssUrl.toString()}">
+  <h1>Hello World</h1>
+  <ul>
+    ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a></ol>`)}
+  </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
 
 serve((req: Request) => {
   const url = req.url;
   const staticFiles = new StaticFileHandler('static');
   let response: Response = new Response(new Response("Not found", { status: 404 }));
-
-
 
   // Probably only needs to be a static site
   const routes: Array<Route> = [
