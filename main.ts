@@ -1,10 +1,10 @@
 import { serve } from "https://deno.land/std@0.152.0/http/server.ts";
 import { join } from "https://deno.land/std@0.152.0/path/mod.ts";
 import { contentType } from "https://deno.land/std@0.152.0/media_types/mod.ts";
-import template from './src/flora.ts';
+import template from "./src/flora.ts";
 
 import { Route, Framework } from "./src/types.ts";
-import { StripStream } from "./src/stream-utils.ts";
+import frameworks from "./src/frameworks.ts";
 
 class StaticFileHandler {
 
@@ -31,33 +31,50 @@ class StaticFileHandler {
   }
 }
 
+const render = (currentFramework) => {
+  return template`
+  <link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <h7>Heading 7</h7>
+  <p>This is a basic paragraph</p>
+  <blockquote>This is a block quote</blockquote>
+  <code>This is some code</code>
+
+  <ul>
+    ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a></ol>`)}
+  </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
+}
+
 serve((req: Request) => {
   const url = req.url;
   const staticFiles = new StaticFileHandler('static');
   let response: Response = new Response(new Response("Not found", { status: 404 }));
 
-  const frameworks: Record<string, URL> = {
-    "index": "", // This is a hack to use my default style
-    "water": "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-  }
-
   // Probably only needs to be a static site
-
   const routes: Array<Route> = [
     [
-      new URLPattern({ pathname: "/(:framework).html" }),
+      new URLPattern({ pathname: "/" }),
       (request, patternResult) => {
+        console.log(window.location)
+        return render(""); // index
+      }
+    ],
+    [
+      new URLPattern({ pathname: "/:framework.html" }),
+      (request, patternResult) => {
+        const pathname = new URL(request.url).pathname;
         const { framework } = patternResult.pathname.groups;
 
         if (framework == null) {
           return new Response("Not found", { status: 404 })
         }
 
-        return new Response(template`
-          <link rel="stylesheet" href="${frameworks[framework].toString()}">
-          <h1>Hello World</h1>
-          <ul>
-          </ul>`, { status: 200, headers: { 'content-type': contentType(extension) } });
+        return render(framework);
       }
     ],
     // Fall through.
@@ -69,6 +86,7 @@ serve((req: Request) => {
 
   for (const [pattern, handler] of routes) {
     const patternResult = pattern.exec(url);
+    console.log(pattern, url, patternResult)
     if (patternResult != null) {
       // Find the first matching route.
       const responseFromHandler = handler(req, patternResult);
