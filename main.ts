@@ -68,7 +68,7 @@ const render = (currentFramework) => {
 			<h4>This is a H4 heading</h4>
 			<h5>This is a H5 heading</h5>
 			<h6>This is a H6 heading</h6>
-			<p>This is a paragraph of text. It's my paragraph, I like it.</p>
+			<p>This is a paragraph of text. It's my paragraph. I like it a lot.</p>
 			<br>
 			<strong>This is a Strong / Bold text</strong>
 			<br>
