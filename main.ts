@@ -36,14 +36,27 @@ const render = (currentFramework) => {
   <link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
 
   <h1>Welcome</h1>
-  <p>This site has be built to make it easier to see what how class-less CSS frameworks work and let you quickly compare them side-by-side</p>
-  <p>I built this because I had trouble doing this and I wanted to make it easier for anyone else.</p>
+  <p>I was struggling to make a simple page I was building look decent. 
+     I knew there were stylesheets just used 'semantic html' (like Tufte) and didn't require any special className 
+     (i.e <code>&ltbutton class="btn-primary"&gt;a button&lt;/button&gt;</code>), however I was struggling to find them.</p>
+  <blockquote>I should know this, but I'm looking for a simple CSS stylesheet that would replace the default user agent and make it look half decent. Google-fu is failing me, all I can find is resets and full frameworks. :\
+  </blockquote>
+
+  <p><a href="https://twitter.com/Paul_Kinlan/status/1560769014787411969">Twitter to the rescue</a>:</p>
+
+  <p>Once I found examples of 'class-less CSS', it was a bit of a pain to find them and compare all the different examples. Hence this page.</p>
+
+  <p>This page is designed to collate all the CSS frameworks into one place and let you compare and contrast them.</p>
+  
   <p>Here is the list of class-less CSS frameworks that you can checkout:</p>
 
   <ul>
     ${Object.values(frameworks).map(framework => template`<li><a href="${framework.htmlUrl}">${framework.name}</a> - <a href="${framework.siteUrl}">homepage</a></li>`)}
   </ul>
 
+  <p>If you have a framework you would like include, create PR against <a href="https://github.com/PaulKinlan/classless-css-demo/blob/main/src/frameworks.ts">frameworks.ts</a></p>
+  
+  <p><a href="https://paul.kinlan.me/">Check out my other site.</a></p>
   <hr>
 
   <p>This page is rendered using ${frameworks[currentFramework].name}.</p>
@@ -92,8 +105,8 @@ const render = (currentFramework) => {
 			<br>
 			<br>
 			<a href="#">Normal link</a>
-		</section>`  
-  .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
+		</section>`
+    .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
 
 serve((req: Request) => {
