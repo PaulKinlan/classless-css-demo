@@ -41,7 +41,10 @@ const render = (currentFramework) => {
   <h5>Heading 5</h5>
   <h6>Heading 6</h6>
   <h7>Heading 7</h7>
-  <p>
+  <p>This is a basic paragraph</p>
+  <blockquote>This is a block quote</blockquote>
+  <code>This is some code</code>
+
   <ul>
     ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a></ol>`)}
   </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
