@@ -36,9 +36,11 @@ serve((req: Request) => {
   const staticFiles = new StaticFileHandler('static');
   let response: Response = new Response(new Response("Not found", { status: 404 }));
 
-  const frameworks: Record<string, URL> = {
-    "index": "", // This is a hack to use my default style
-    "water": "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+  const frameworks: Record<string, {
+    name: string, url: URL
+  }> = {
+    "index": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
+    "water": { name: "Water.css", url: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" }
   }
 
   // Probably only needs to be a static site
@@ -46,6 +48,8 @@ serve((req: Request) => {
     [
       new URLPattern({ pathname: "/:framework.html" }),
       (request, patternResult) => {
+        const pathname = new URL(request.url).pathname;
+        const extension = pathname.substr(pathname.lastIndexOf("."));
         const { framework } = patternResult.pathname.groups;
 
         if (framework == null) {
@@ -56,6 +60,7 @@ serve((req: Request) => {
           <link rel="stylesheet" href="${frameworks[framework].toString()}">
           <h1>Hello World</h1>
           <ul>
+            ${Object.values(frameworks).map(framework => template`<ol><a href="">Water.css</a></ol>`)}
           </ul>`, { status: 200, headers: { 'content-type': contentType(extension) } });
       }
     ],
