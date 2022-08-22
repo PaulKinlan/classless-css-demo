@@ -4,7 +4,7 @@ import { contentType } from "https://deno.land/std@0.152.0/media_types/mod.ts";
 import template from "./src/flora.ts";
 
 import { Route, Framework } from "./src/types.ts";
-//import { StripStream } from "./src/stream-utils.ts";
+import frameworks from "./src/frameworks.ts";
 
 class StaticFileHandler {
 
@@ -29,13 +29,6 @@ class StaticFileHandler {
   get pattern(): URLPattern {
     return new URLPattern({ pathname: "*" })
   }
-}
-
-const frameworks: Record<string, {
-  name: string, htmlUrl: string, cssUrl: URL
-}> = {
-  "": { name: "Browser", htmllUrl: "/", cssUrl: `/styles/index.css` }, // This is a hack to use my default style
-  "water": { name: "Water.css", htmlUrl: "/water.html", cssUrl: new URL("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css") }
 }
 
 const render = (currentFramework) => {
