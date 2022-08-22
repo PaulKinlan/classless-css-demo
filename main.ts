@@ -232,17 +232,7 @@ const render = (currentFramework) => {
 				</tbody>
 			</table>
 		</section>
-    <section>
-			<h2>Utility classes:</h2>
-			<p>Apart from this, stylize.css comes with few utility classes as below.</p>
-			<pre>&lt;div class="left"&gt; &lt;!-- Float left any element --&gt;</pre>
-			<pre>&lt;div class="right"&gt; &lt;!-- Float right any element --&gt;</pre>
-			<pre>&lt;div class="center"&gt; &lt;!-- Center align text of any element --&gt;</pre>
-			<pre>&lt;div class="hide"&gt; &lt;!-- Hide any element --&gt;</pre>
-			<pre>&lt;div class="reset"&gt; &lt;!-- Resets all css of the element --&gt;</pre>
-			<pre>&lt;div class="clear"&gt; &lt;!-- Sets clear:both for the element --&gt;</pre>
-			<pre>&lt;div class="spacer"&gt; &lt;!-- Adds a breathing space between 2 elements. --&gt;</pre>
-		</section>`
+    `
     .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
 
