@@ -103,6 +103,145 @@ const render = (currentFramework) => {
 			<br>
 			<br>
 			<a href="#">Normal link</a>
+		</section>
+    <section>
+    <h2>Lists:</h2>
+    <ul>
+      <li>Unordered list item 1</li>
+      <li>Unordered list item 2</li>
+      <ul>
+        <li>Unordered list item 3</li>
+      </ul>
+      <li>Unordered list item 4</li>
+      <li>Unordered list item 5</li>
+    </ul>
+    <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2</li>
+      <ol>
+        <li>Ordered list item 3</li>
+      </ol>
+      <li>Ordered list item 4</li>
+      <li>Ordered list item 5</li>
+    </ol>
+  </section>
+  <section>
+			<h2>Form:</h2>
+			<fieldset>
+				<legend>This is a legend on fieldset</legend>
+				<form>
+					<br>
+					<label>Label:</label>
+					<input type="text" placeholder="Text field">
+					<br>
+					<label>Select box:</label>
+					<select>
+						<optgroup label="Option group">
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+						</optgroup>
+					</select>
+					<br>
+					<label>Numeric Field:</label>
+					<input type="number" placeholder="Number" value="0">
+					<br>
+					<label>Checkboxes:</label>
+					<label>Option 1 <input type="checkbox" checked=""></label>
+					<label>Option 2 <input type="checkbox"></label>
+					<br>
+					<label>Radio buttons:</label>
+					<label>Yes <input type="radio" checked=""></label>
+					<label>No <input type="radio"></label>				
+					<br>
+					<textarea placeholder="Textarea" rows="3" cols="50"></textarea>
+					<br>
+					<input type="submit" value="Submit button">
+				</form>
+			</fieldset>
+			<br>
+			<button>Button</button>
+			<a href="javascript:void(0)" role="button">Anchor role=button</a>
+			<input type="button" value="Input type=button">
+			<button disabled="">Button</button>
+			<br>
+			<label>Progress bar</label>
+			<progress value="22" max="100"></progress>
+      </section>
+      <section>
+			<h2>Table:</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Location</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Vasanth</td>
+						<td>@vsnthv</td>
+						<td>Chennai, India</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>John</td>
+						<td>@john</td>
+						<td>USA</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Chan</td>
+						<td>@chan</td>
+						<td>Hong Kong</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Table with <code>border=1</code></p>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Location</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>Vasanth</td>
+						<td>@vsnthv</td>
+						<td>Chennai, India</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>John</td>
+						<td>@john</td>
+						<td>USA</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Chan</td>
+						<td>@chan</td>
+						<td>Hong Kong</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+    <section>
+			<h2>Utility classes:</h2>
+			<p>Apart from this, stylize.css comes with few utility classes as below.</p>
+			<pre>&lt;div class="left"&gt; &lt;!-- Float left any element --&gt;</pre>
+			<pre>&lt;div class="right"&gt; &lt;!-- Float right any element --&gt;</pre>
+			<pre>&lt;div class="center"&gt; &lt;!-- Center align text of any element --&gt;</pre>
+			<pre>&lt;div class="hide"&gt; &lt;!-- Hide any element --&gt;</pre>
+			<pre>&lt;div class="reset"&gt; &lt;!-- Resets all css of the element --&gt;</pre>
+			<pre>&lt;div class="clear"&gt; &lt;!-- Sets clear:both for the element --&gt;</pre>
+			<pre>&lt;div class="spacer"&gt; &lt;!-- Adds a breathing space between 2 elements. --&gt;</pre>
 		</section>`
     .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
