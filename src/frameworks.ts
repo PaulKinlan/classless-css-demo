@@ -13,7 +13,7 @@ const frameworks: Record<string, {
   "holiday": {name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/"},
   "marx": { name: "Marx", htmlUrl: "/marx.html", cssUrl: "/styles/marx.css", siteUrl: "https://mblode.github.io/marx/" },
   "mvp": { name: "MVP.css", htmlUrl: "/mvp.html", cssUrl: "https://unpkg.com/mvp.css", siteUrl: "https://andybrewer.github.io/mvp/" },
-  "openprops": { name: "openprops.css", htmlUrl: "/openprops.html", cssUrl: "https://unpkg.com/open-props", siteUrl: "https://open-props.style" },
+  "openprops": { name: "openprops.css", htmlUrl: "/openprops.html", cssUrl: "/styles/openprops.css", siteUrl: "https://open-props.style" },
   "tufte": { name: "Tufte.css", htmlUrl: "/tufte.html", cssUrl: "/styles/tufte.css", siteUrl: "https://github.com/edwardtufte/tufte-css" },
   "sakura": { name: "Sakura", htmlUrl: "/sakura.html", cssUrl: "/styles/sakura.css", siteUrl: "https://github.com/oxalorg/sakura" },
   "simple": { name: "Simple.css", htmlUrl: "/simple.html", cssUrl: "https://cdn.simplecss.org/simple.min.css", siteUrl: "https://simplecss.org/demo" },
