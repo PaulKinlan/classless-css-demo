@@ -1,3 +1,10 @@
+/*
+  To add a framework, add in the details below:
+  + Please keep it in alphabetical order.
+  + If you need to add a version of the stylesheet, add it to the /static/styles folder (otherwise a link is fine).
+  + Make sure to add a link to the homepage.
+*/
+
 const frameworks: Record<string, {
   name: string, htmlUrl: string, cssUrl: URL
 }> = {
