@@ -68,6 +68,7 @@ serve((req: Request) => {
 
   for (const [pattern, handler] of routes) {
     const patternResult = pattern.exec(url);
+    console.log(pattern, url, patternResult)
     if (patternResult != null) {
       // Find the first matching route.
       const responseFromHandler = handler(req, patternResult);
