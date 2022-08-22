@@ -7,7 +7,7 @@ const frameworks: Record<string, {
   "tufte": { name: "Tufte.css", htmlUrl: "/tufte.html", cssUrl: "/styles/tufte.css", siteUrl: "https://github.com/edwardtufte/tufte-css" },
   "stylize": { name: "Stylize", htmlUrl: "/stylize.html", cssUrl: "/styles/stylize.css", siteUrl: "https://vasanthv.com/stylize.css/demo.html" },
   "water": { name: "Water.css", htmlUrl: "/water.html", cssUrl: new URL("https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"), siteUrl: "https://watercss.kognise.dev/" },
-  "writ": { name: "Writ", htmlUrl: "/writ.html", cssUrl: "/styles/writ.css"), siteUrl: "https://writ.cmcenroe.me/writ.css" },
+  "writ": { name: "Writ", htmlUrl: "/writ.html", cssUrl: "/styles/writ.css", siteUrl: "https://writ.cmcenroe.me/writ.css" },
 }
 
 export default frameworks;
