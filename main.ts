@@ -34,6 +34,18 @@ class StaticFileHandler {
 const render = (currentFramework) => {
   return template`
   <link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
+
+  <h1>Welcome</h1>
+  <p>This site has be built to make it easier to see what how class-less CSS frameworks work and let you quickly compare them side-by-side</p>
+  <p>I built this because I had trouble doing this.</p>
+  <p>Here is the list of class-less CSS frameworks that you can checkout</p>
+
+  <ul>
+    ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a> - <a href="${framework.siteUrl}">homepage</a></ol>`)}
+  </ul>
+
+  <hr>
+
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>
   <h3>Heading 3</h3>
@@ -43,11 +55,9 @@ const render = (currentFramework) => {
   <h7>Heading 7</h7>
   <p>This is a basic paragraph</p>
   <blockquote>This is a block quote</blockquote>
-  <code>This is some code</code>
-
-  <ul>
-    ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a></ol>`)}
-  </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
+  <code>This is some code</code>`
+  
+  .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
 
 serve((req: Request) => {
