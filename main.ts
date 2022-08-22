@@ -39,6 +39,7 @@ const frameworks: Record<string, {
 }
 
 const render = (framework) => {
+  console.log(frameworks, framework)
   return template`
   <link rel="stylesheet" href="${frameworks[framework].cssUrl.toString()}">
   <h1>Hello World</h1>
@@ -58,7 +59,7 @@ serve((req: Request) => {
       new URLPattern({ pathname: "/" }),
       (request, patternResult) => {
         console.log(window.location)
-        return render("index");
+        return render(""); // index
       }
     ],
     [
