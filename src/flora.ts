@@ -50,7 +50,7 @@ const enqueueItem = async (val, controller) => {
   }
 }
 
-export default async (strings, ...values) => {
+export default async (strings, ...values):ReadableStream => {
   return new ReadableStream({
     start(controller) {
       async function push() {
