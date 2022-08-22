@@ -35,12 +35,12 @@ const render = (currentFramework) => {
   return template`
   <link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
   <h1>Heading 1</h1>
-  <h2>Heading 2</h1>
-  <h3>Heading 3</h1>
-  <h4>Heading 4</h1>
-  <h5>Heading 5>/h1>
-  <h6>Heading 6</h1>
-  <h7>Heading 7</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <h7>Heading 7</h7>
   <p>
   <ul>
     ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.htmlUrl}">${framework.name}</a></ol>`)}
