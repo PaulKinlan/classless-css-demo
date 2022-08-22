@@ -60,8 +60,8 @@ serve((req: Request) => {
           <link rel="stylesheet" href="${frameworks[framework].toString()}">
           <h1>Hello World</h1>
           <ul>
-            ${Object.values(frameworks).map(framework => template`<ol><a href="">Water.css</a></ol>`)}
-          </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': contentType(extension) }}));
+            ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.url}">${framework.name}</a></ol>`)}
+          </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': contentType(extension) } }));
       }
     ],
     // Fall through.
