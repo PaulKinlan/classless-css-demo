@@ -31,37 +31,49 @@ class StaticFileHandler {
   }
 }
 
+const frameworks: Record<string, {
+  name: string, url: URL
+}> = {
+  "": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
+  "index": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
+  "water": { name: "Water.css", url: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" }
+}
+
+const render = (framework) => {
+  return template`
+          <link rel="stylesheet" href="${frameworks[framework].toString()}">
+          <h1>Hello World</h1>
+          <ul>
+            ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.url}">${framework.name}</a></ol>`)}
+          </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
+}
+
 serve((req: Request) => {
   const url = req.url;
   const staticFiles = new StaticFileHandler('static');
   let response: Response = new Response(new Response("Not found", { status: 404 }));
 
-  const frameworks: Record<string, {
-    name: string, url: URL
-  }> = {
-    "index": { name: "Browser", url: "/styles/index.css" }, // This is a hack to use my default style
-    "water": { name: "Water.css", url: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" }
-  }
+
 
   // Probably only needs to be a static site
   const routes: Array<Route> = [
     [
+      new URLPattern({ pathname: "/" }),
+      (request, patternResult) => {
+        return render("index");
+      }
+    ],
+    [
       new URLPattern({ pathname: "/:framework.html" }),
       (request, patternResult) => {
         const pathname = new URL(request.url).pathname;
-        const extension = pathname.substr(pathname.lastIndexOf("."));
         const { framework } = patternResult.pathname.groups;
 
         if (framework == null) {
           return new Response("Not found", { status: 404 })
         }
 
-        return template`
-          <link rel="stylesheet" href="${frameworks[framework].toString()}">
-          <h1>Hello World</h1>
-          <ul>
-            ${Object.values(frameworks).map(framework => template`<ol><a href="${framework.url}">${framework.name}</a></ol>`)}
-          </ul>`.then(data => new Response(data, { status: 200, headers: { 'content-type': contentType(extension) } }));
+        return render(framework);
       }
     ],
     // Fall through.
