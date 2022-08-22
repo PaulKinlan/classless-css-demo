@@ -57,6 +57,7 @@ serve((req: Request) => {
     [
       new URLPattern({ pathname: "/" }),
       (request, patternResult) => {
+        console.log(window.location)
         return render("index");
       }
     ],
