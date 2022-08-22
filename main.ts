@@ -60,7 +60,7 @@ const render = (currentFramework) => {
   <p>This page is rendered using ${frameworks[currentFramework].name}.</p>
   <p>Some of the entries are taken from the layout from <a href="https://vasanthv.com/stylize.css/demo.html">stylize</a>.</p>
 
-  <section>
+  
 			<h2>Typography:</h2>
 			<h1>This is a H1 heading</h1>
 			<h2>This is a H2 heading</h2>
@@ -103,8 +103,7 @@ const render = (currentFramework) => {
 			<br>
 			<br>
 			<a href="#">Normal link</a>
-		</section>
-    <section>
+<hr>
     <h2>Lists:</h2>
     <ul>
       <li>Unordered list item 1</li>
@@ -124,8 +123,7 @@ const render = (currentFramework) => {
       <li>Ordered list item 4</li>
       <li>Ordered list item 5</li>
     </ol>
-  </section>
-  <section>
+  <hr>
 			<h2>Form:</h2>
 			<fieldset>
 				<legend>This is a legend on fieldset</legend>
@@ -167,8 +165,7 @@ const render = (currentFramework) => {
 			<br>
 			<label>Progress bar</label>
 			<progress value="22" max="100"></progress>
-      </section>
-      <section>
+<hr>
 			<h2>Table:</h2>
 			<table>
 				<thead>
@@ -231,7 +228,6 @@ const render = (currentFramework) => {
 					</tr>
 				</tbody>
 			</table>
-		</section>
     `
     .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
