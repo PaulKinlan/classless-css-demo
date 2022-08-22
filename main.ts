@@ -42,7 +42,6 @@ serve((req: Request) => {
   }
 
   // Probably only needs to be a static site
-
   const routes: Array<Route> = [
     [
       new URLPattern({ pathname: "/(:framework).html" }),
