@@ -4,7 +4,7 @@ import { contentType } from "https://deno.land/std@0.152.0/media_types/mod.ts";
 import template from "./src/flora.ts";
 
 import { Route, Framework } from "./src/types.ts";
-import { StripStream } from "./src/stream-utils.ts";
+//import { StripStream } from "./src/stream-utils.ts";
 
 class StaticFileHandler {
 
