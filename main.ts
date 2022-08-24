@@ -35,7 +35,7 @@ const render = (currentFramework) => {
   return template`<html>
 
   <head>
-	<title>Compare Classless CSS frameworks &mdash currently using ${frameworks[currentFramework].name}</title>
+	<title>Compare Classless CSS frameworks &mdash currently using "<a href="${frameworks[currentFramework].siteUrl}">${frameworks[currentFramework].name}</a></title>
 	<link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
 	<meta name="author" content="Paul Kinlan">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
