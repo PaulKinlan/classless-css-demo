@@ -8,31 +8,31 @@ import frameworks from "./src/frameworks.ts";
 
 class StaticFileHandler {
 
-  #basePath: string = "";
+	#basePath: string = "";
 
-  constructor(base: string) {
-    this.#basePath = base;
-  }
+	constructor(base: string) {
+		this.#basePath = base;
+	}
 
-  handler(request: Request): Response {
-    const pathname = new URL(request.url).pathname;
-    const extension = pathname.substr(pathname.lastIndexOf("."));
-    const resolvedPathname = (pathname == "" || pathname == "/") ? "/index.html" : pathname;
-    const path = join(Deno.cwd(), this.#basePath, resolvedPathname)
-    const file = Deno.readFile(path)
-      .then(data => new Response(data, { status: 200, headers: { 'content-type': contentType(extension) } })) // Need to think about content tyoes.
-      .catch(_ => new Response("Not found", { status: 404 }));
+	handler(request: Request): Response {
+		const pathname = new URL(request.url).pathname;
+		const extension = pathname.substr(pathname.lastIndexOf("."));
+		const resolvedPathname = (pathname == "" || pathname == "/") ? "/index.html" : pathname;
+		const path = join(Deno.cwd(), this.#basePath, resolvedPathname)
+		const file = Deno.readFile(path)
+			.then(data => new Response(data, { status: 200, headers: { 'content-type': contentType(extension) } })) // Need to think about content tyoes.
+			.catch(_ => new Response("Not found", { status: 404 }));
 
-    return file;
-  }
+		return file;
+	}
 
-  get pattern(): URLPattern {
-    return new URLPattern({ pathname: "*" })
-  }
+	get pattern(): URLPattern {
+		return new URLPattern({ pathname: "*" })
+	}
 }
 
 const render = (currentFramework) => {
-  return template`<html>
+	return template`<html>
 
   <head>
 	<title>Compare Classless CSS frameworks &mdash currently using "<a href="${frameworks[currentFramework].siteUrl}">${frameworks[currentFramework].name}</a></title>
@@ -141,6 +141,15 @@ const render = (currentFramework) => {
 	  <li>Ordered list item 4</li>
 	  <li>Ordered list item 5</li>
 	</ol>
+	<dl>
+		<dt>Banana</dt>
+		<dd>A yellow fruit that is easy to peel.</dd>
+		<dd>Which also grows on a tree.</dd>
+		<dt>Cashew</dt>
+		<dd>A tan nut without a peel.</dd>
+		<dt>Cherry</dt>
+		<dd>A red fruit that is hard to peel.</dd>
+	</dl>
 	<hr>
 	<h2>Form:</h2>
 	<fieldset>
@@ -249,54 +258,54 @@ const render = (currentFramework) => {
   </body>
   
   </html>`
-    .then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
+		.then(data => new Response(data, { status: 200, headers: { 'content-type': 'text/html' } }));
 }
 
 serve((req: Request) => {
-  const url = req.url;
-  const staticFiles = new StaticFileHandler('static');
-  let response: Response = new Response(new Response("Not found", { status: 404 }));
+	const url = req.url;
+	const staticFiles = new StaticFileHandler('static');
+	let response: Response = new Response(new Response("Not found", { status: 404 }));
 
-  // Probably only needs to be a static site
-  const routes: Array<Route> = [
-    [
-      new URLPattern({ pathname: "/" }),
-      (request, patternResult) => {
-        console.log(window.location)
-        return render(""); // index
-      }
-    ],
-    [
-      new URLPattern({ pathname: "/:framework.html" }),
-      (request, patternResult) => {
-        const pathname = new URL(request.url).pathname;
-        const { framework } = patternResult.pathname.groups;
+	// Probably only needs to be a static site
+	const routes: Array<Route> = [
+		[
+			new URLPattern({ pathname: "/" }),
+			(request, patternResult) => {
+				console.log(window.location)
+				return render(""); // index
+			}
+		],
+		[
+			new URLPattern({ pathname: "/:framework.html" }),
+			(request, patternResult) => {
+				const pathname = new URL(request.url).pathname;
+				const { framework } = patternResult.pathname.groups;
 
-        if (framework == null) {
-          return new Response("Not found", { status: 404 })
-        }
+				if (framework == null) {
+					return new Response("Not found", { status: 404 })
+				}
 
-        return render(framework);
-      }
-    ],
-    // Fall through.
-    [
-      staticFiles.pattern,
-      staticFiles.handler.bind(staticFiles)
-    ]
-  ];
+				return render(framework);
+			}
+		],
+		// Fall through.
+		[
+			staticFiles.pattern,
+			staticFiles.handler.bind(staticFiles)
+		]
+	];
 
-  for (const [pattern, handler] of routes) {
-    const patternResult = pattern.exec(url);
-    console.log(pattern, url, patternResult)
-    if (patternResult != null) {
-      // Find the first matching route.
-      const responseFromHandler = handler(req, patternResult);
+	for (const [pattern, handler] of routes) {
+		const patternResult = pattern.exec(url);
+		console.log(pattern, url, patternResult)
+		if (patternResult != null) {
+			// Find the first matching route.
+			const responseFromHandler = handler(req, patternResult);
 
-      response = responseFromHandler;
-      break;
-    }
-  }
+			response = responseFromHandler;
+			break;
+		}
+	}
 
-  return response;
+	return response;
 });
