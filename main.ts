@@ -182,6 +182,7 @@ const render = (currentFramework) => {
 		<textarea placeholder="Textarea" rows="3" cols="50"></textarea>
 		<br>
 		<input type="submit" value="Submit button">
+		<input type="reset" value="Reset button">
 	  </form>
 	</fieldset>
 	<br>
