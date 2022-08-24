@@ -35,7 +35,7 @@ const render = (currentFramework) => {
   return template`<html>
 
   <head>
-	<title>Compare Classless CSS frameworks</title>
+	<title>Compare Classless CSS frameworks &mdash currently using ${frameworks[currentFramework].name}</title>
 	<link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
 	<meta name="author" content="Paul Kinlan">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -44,7 +44,7 @@ const render = (currentFramework) => {
   </head>
   
   <body>
-	<h1>Welcome</h1>
+	<h1>Welcome to Classless CSS Demo using ${frameworks[currentFramework].name}</h1>
 	<p>I was struggling to make a simple page I was building look decent.
 	  I knew there were stylesheets that just used 'semantic html' (like Tufte) and didn't require any special class names
 	  (i.e <code>&ltbutton class="btn-primary"&gt;a button&lt;/button&gt;</code>), however I was struggling to find them.
