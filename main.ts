@@ -262,7 +262,7 @@ const render = (currentFramework) => {
 	<hr>
 	<h2>Images</h2>
 	<figure>
-    <img src="http://placehold.it/900x500" alt="placeholder image 900 pixels wide by 500 pixels tall">
+    <img src="http://placekitten.com/g/900/500" alt="placeholder image 900 pixels wide by 500 pixels tall">
     <figcaption>A photo placeholder text</figcaption>
   </figure>
 
