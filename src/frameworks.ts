@@ -10,6 +10,7 @@ const frameworks: Record<string, {
 }> = {
   "": { name: "Browser default style", htmlUrl: "/", cssUrl: `/styles/index.css`, siteUrl: "https://meiert.com/en/blog/user-agent-style-sheets/" }, // This is a hack to use my default style
   "attri": { name: "AttriCSS", htmlUrl: "/attri.html", cssUrl: "/styles/attri.css", siteUrl: "https://raj457036.github.io/attriCSS/" },
+  "bahunya": { name: "Bahunya", htmlUrl: "/bahunya.html", cssUrl: " https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css", siteUrl: "https://hakanalpay.com/bahunya/" },
   "bedrocss": { name: "Bedrocss", htmlUrl: "/bedrocss.html", cssUrl: "https://unpkg.com/bedrocss", siteUrl: "https://bedrocss.austingil.com/" },
   "holiday": {name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/"},
   "marx": { name: "Marx", htmlUrl: "/marx.html", cssUrl: "/styles/marx.css", siteUrl: "https://mblode.github.io/marx/" },
