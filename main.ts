@@ -106,6 +106,9 @@ const render = (currentFramework) => {
 	<br>
 	<pre>This is a preformatted text.</pre>
 	<blockquote>This is a Blockquote.</blockquote>
+	<aside>
+      Use an <code>aside</code> to emphasize a content related to the main content.
+	</aside>
 	<samp>This is a sample output.</samp>
 	<br>
 	This is the <code>&lt;code&gt;</code> &amp; <kbd>kbd</kbd>
