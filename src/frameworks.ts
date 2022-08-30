@@ -13,6 +13,7 @@ const frameworks: Record<string, {
   "awsm": { name: "Awsm.css", htmlUrl: "/awsm.html", cssUrl: "/styles/awsm.css", siteUrl: "https://igoradamenko.github.io/awsm.css/elements.html" },
   "bahunya": { name: "Bahunya", htmlUrl: "/bahunya.html", cssUrl: " https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css", siteUrl: "https://hakanalpay.com/bahunya/" },
   "bedrocss": { name: "Bedrocss", htmlUrl: "/bedrocss.html", cssUrl: "https://unpkg.com/bedrocss", siteUrl: "https://bedrocss.austingil.com/" },
+  "classless": { name: "Classless.css", htmlUrl: "/classless.html", cssUrl: "https://classless.de/classless.css", siteUrl: "https://classless.de/" },
   "holiday": {name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/"},
   "marx": { name: "Marx", htmlUrl: "/marx.html", cssUrl: "/styles/marx.css", siteUrl: "https://mblode.github.io/marx/" },
   "mvp": { name: "MVP.css", htmlUrl: "/mvp.html", cssUrl: "https://unpkg.com/mvp.css", siteUrl: "https://andybrewer.github.io/mvp/" },
