@@ -11,6 +11,7 @@ const frameworks: Record<string, {
   "": { name: "Browser default style", htmlUrl: "/", cssUrl: `/styles/index.css`, siteUrl: "https://meiert.com/en/blog/user-agent-style-sheets/" }, // This is a hack to use my default style
   "attri": { name: "AttriCSS", htmlUrl: "/attri.html", cssUrl: "/styles/attri.css", siteUrl: "https://raj457036.github.io/attriCSS/" },
   "awsm": { name: "Awsm.css", htmlUrl: "/awsm.html", cssUrl: "/styles/awsm.css", siteUrl: "https://igoradamenko.github.io/awsm.css/elements.html" },
+  "basic": { name: "Basic.css", htmlUrl: "/basic.html", cssUrl: "/styles/basic.css", siteUrl: "https://vladocar.github.io/Basic.css/" },
   "bahunya": { name: "Bahunya", htmlUrl: "/bahunya.html", cssUrl: " https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css", siteUrl: "https://hakanalpay.com/bahunya/" },
   "bedrocss": { name: "Bedrocss", htmlUrl: "/bedrocss.html", cssUrl: "https://unpkg.com/bedrocss", siteUrl: "https://bedrocss.austingil.com/" },
   "classless": { name: "Classless.css", htmlUrl: "/classless.html", cssUrl: "https://classless.de/classless.css", siteUrl: "https://classless.de/" },
