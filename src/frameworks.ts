@@ -20,6 +20,7 @@ const frameworks: Record<string, {
   "marx": { name: "Marx", htmlUrl: "/marx.html", cssUrl: "/styles/marx.css", siteUrl: "https://mblode.github.io/marx/" },
   "mvp": { name: "MVP.css", htmlUrl: "/mvp.html", cssUrl: "https://unpkg.com/mvp.css", siteUrl: "https://andybrewer.github.io/mvp/" },
   "openprops": { name: "OpenProps + Normalize.css", htmlUrl: "/openprops.html", cssUrl: "/styles/openprops.css", siteUrl: "https://open-props.style" },
+  "pico": { name: "Pico", htmlUrl: "/pico.html", cssUrl: "https://unpkg.com/@picocss/pico@latest/css/pico.min.css", siteUrl: "https://picocss.com/" },
   "sakura": { name: "Sakura", htmlUrl: "/sakura.html", cssUrl: "/styles/sakura.css", siteUrl: "https://github.com/oxalorg/sakura" },
   "simple": { name: "Simple.css", htmlUrl: "/simple.html", cssUrl: "https://cdn.simplecss.org/simple.min.css", siteUrl: "https://simplecss.org/demo" },
   "stylize": { name: "Stylize", htmlUrl: "/stylize.html", cssUrl: "/styles/stylize.css", siteUrl: "https://vasanthv.com/stylize.css/demo.html" },
