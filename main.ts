@@ -39,7 +39,7 @@ const render = (currentFramework) => {
 	<link rel="stylesheet" href="${frameworks[currentFramework].cssUrl.toString()}">
 	<meta name="author" content="Paul Kinlan">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link rel="author" href="https://paul.kinlan.me./">
+	<link rel="author" href="https://paul.kinlan.me/">
 	<meta name="google-site-verification" content="4rYZNKo8v8hiEOKIwXZDVD8qRyfs5QCGwCtD1_6Vw5g" />
   </head>
   
