@@ -16,7 +16,7 @@ const frameworks: Record<string, {
   "bedrocss": { name: "Bedrocss", htmlUrl: "/bedrocss.html", cssUrl: "https://unpkg.com/bedrocss", siteUrl: "https://bedrocss.austingil.com/" },
   "classless": { name: "Classless.css", htmlUrl: "/classless.html", cssUrl: "https://classless.de/classless.css", siteUrl: "https://classless.de/" },
   "downstyler": { name: "Downstyler", htmlUrl: "/downstyler.html", cssUrl: "https://raw.githack.com/waldyrious/downstyler/master/downstyler.css", siteUrl: "https://waldyrious.net/downstyler/" },
-  "holiday": {name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/"},
+  "holiday": { name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/" },
   "marx": { name: "Marx", htmlUrl: "/marx.html", cssUrl: "/styles/marx.css", siteUrl: "https://mblode.github.io/marx/" },
   "mvp": { name: "MVP.css", htmlUrl: "/mvp.html", cssUrl: "https://unpkg.com/mvp.css", siteUrl: "https://andybrewer.github.io/mvp/" },
   "openprops": { name: "OpenProps + Normalize.css", htmlUrl: "/openprops.html", cssUrl: "/styles/openprops.css", siteUrl: "https://open-props.style" },
@@ -27,6 +27,7 @@ const frameworks: Record<string, {
   "tacit": { name: "Tacit", htmlUrl: "/tacit.html", cssUrl: "https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css", siteUrl: "https://yegor256.github.io/tacit/" },
   "tufte": { name: "Tufte.css", htmlUrl: "/tufte.html", cssUrl: "/styles/tufte.css", siteUrl: "https://github.com/edwardtufte/tufte-css" },
   "water": { name: "Water.css", htmlUrl: "/water.html", cssUrl: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css", siteUrl: "https://watercss.kognise.dev/" },
+  "wing": { name: "Wing", htmlUrl: "/wing.html", cssUrl: "https://unpkg.com/wingcss", siteUrl: "https://kbrsh.github.io/wing/" },
   "writ": { name: "Writ", htmlUrl: "/writ.html", cssUrl: "/styles/writ.css", siteUrl: "https://writ.cmcenroe.me/writ.css" },
 }
 
