@@ -16,7 +16,7 @@ const frameworks: Record<string, {
   "bedrocss": { name: "Bedrocss", htmlUrl: "/bedrocss.html", cssUrl: "https://unpkg.com/bedrocss", siteUrl: "https://bedrocss.austingil.com/" },
   "classless": { name: "Classless.css", htmlUrl: "/classless.html", cssUrl: "https://classless.de/classless.css", siteUrl: "https://classless.de/" },
   "downstyler": { name: "Downstyler", htmlUrl: "/downstyler.html", cssUrl: "https://raw.githack.com/waldyrious/downstyler/master/downstyler.css", siteUrl: "https://waldyrious.net/downstyler/" },
-  "holiday": { name: "Holiday.css", htmlUrl: "holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/" },
+  "holiday": { name: "Holiday.css", htmlUrl: "/holiday.html", cssUrl: "https://cdn.jsdelivr.net/npm/holiday.css@0.9.8", siteUrl: "https://holidaycss.js.org/" },
   "marx": { name: "Marx", htmlUrl: "/marx.html", cssUrl: "/styles/marx.css", siteUrl: "https://mblode.github.io/marx/" },
   "mvp": { name: "MVP.css", htmlUrl: "/mvp.html", cssUrl: "https://unpkg.com/mvp.css", siteUrl: "https://andybrewer.github.io/mvp/" },
   "openprops": { name: "OpenProps + Normalize.css", htmlUrl: "/openprops.html", cssUrl: "/styles/openprops.css", siteUrl: "https://open-props.style" },
